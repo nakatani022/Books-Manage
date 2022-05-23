@@ -68,7 +68,7 @@ const MyList: FC = memo(() => {
 
   const myList = posts.map((post: any, index: string) => (
     <>
-      <Srow>
+      <Srow key={post.id}>
         <SbookImage
           alt=""
           src={`https://books.google.com/books/content?id=${post.image}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api`}

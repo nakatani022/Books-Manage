@@ -42,10 +42,10 @@ export const Shiori: FC = memo(() => {
   // 
 
 
-  const [page, setPage] = useState<number>();
-  const [term, setTerm] = useState<string>();
-  const [text, setText] = useState<string>();
-  const [id, setId] = useState<any>();
+  const [page, setPage] = useState<number>(0);
+  const [term, setTerm] = useState<string>("");
+  const [text, setText] = useState<string>("");
+  const [id, setId] = useState<any>(0);
   const [shioriArray, setShioriArray] = useState<any>([]);
   const [validate, setValidate] = useState<boolean>(false);
   // const [datas, setDatas] = useState<any>([]);
@@ -54,28 +54,16 @@ export const Shiori: FC = memo(() => {
   const onChangeText = (event: any) => setText(event.target.value);
   const onChangePage = (event: any) => setPage(event.target.value);
 
-  // const params = useParams();
-  // const { id } = params;
-  // console.log(id);
-  // useEffect(() => {
-  //   const usersCollectionRef = collection(db, 'shiori-list');
-  //   getDocs(usersCollectionRef).then((querySnapshot) => {
-  //     querySnapshot.docs.map((doc) => console.dir(doc));
-  //   });
-  // }, []);
-
-
 
   const outputData = () => {
     const saveData = collection(db, "shiori-list");
     const q = query(saveData, orderBy("timestamp", "desc"));
     onSnapshot(q, (querySnapshot) => {
       setShioriArray(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.dir(shioriArray);
-      setDocumentId(querySnapshot.docs.map((doc) => console.dir((doc.data()))));
+      // setDocumentId(querySnapshot.docs.map((doc) => console.dir((doc.data()))));
     });
   };
-  console.dir(documentId);
+  // console.dir(documentId);
 
 
   const onClickShiori = (event: any) => {
