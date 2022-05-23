@@ -1,11 +1,6 @@
 import { memo, ReactNode, FC, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Sass from "../css/SassModules.modules.scss";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
-import { act } from "react-dom/test-utils";
-import App from "../../App";
 
 
 type Props = {
@@ -27,7 +22,6 @@ export const Header: FC<Props> = memo((props) => {
     <SHeader>
       <SHeaderInner>
         <SInner>
-          {/* <Slogo to="/"><FontAwesomeIcon icon={ faBookOpen }></FontAwesomeIcon></Slogo> */}
           <Slogo to="/">知識の森</Slogo>
           <div>
             <SLink to="/">作成</SLink>

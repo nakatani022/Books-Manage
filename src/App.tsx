@@ -1,7 +1,6 @@
 import { useState, FC } from "react";
 import "./App.css";
 import axios from "axios";
-// import { Todo } from "./Todo"
 import { BooksList } from "./components/BooksList";
 import SearchBar from "./components/SearchBar";
 import styled from "styled-components";
@@ -32,7 +31,6 @@ const App: FC = () => {
     }
   };
   const error = "該当なし";
-  // const totalItems1 = `該当: ${todos.totalItems}`;
 
   return (
     <>
@@ -44,7 +42,7 @@ const App: FC = () => {
 
         <Sflex>
           {todos
-            ? // <p>totalItems1</p> */}
+            ? 
               todos.map((item: any) => {
                 return (
                   <BooksList
@@ -73,11 +71,7 @@ const Smask = styled.div<{ active: boolean }>`
   width: 100%;
   top: 0;
 `;
-// const Simage = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   background-image: url({bgImage})
-// `;
+
 const Simage = styled.img<{ active: boolean }>`
   height: ${(props) => (props.active ? "400px" : "900px")};
   width: 100%;

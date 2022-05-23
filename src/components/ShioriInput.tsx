@@ -1,19 +1,6 @@
 import { memo, FC } from "react";
 import styled from "styled-components";
-// import { db } from "../firebase";
-// import {
-//   addDoc,
-//   collection,
-//   doc,
-//   onSnapshot,
-//   QuerySnapshot,
-//   serverTimestamp,
-//   orderBy,
-//   query,
-//   getDocs,
-// } from "firebase/firestore";
-// import { useParams } from "react-router-dom";
-// import firebase from 'firebase';
+
 
 type Props = {
   // title: string;
@@ -27,7 +14,6 @@ type Props = {
   validate: boolean;
 };
 
-// const db = firebase.firestore();
 
 export const ShioriInput: FC<Props> = memo((props) => {
   const { changePage, changeTerm, changeText, clickShiori, 

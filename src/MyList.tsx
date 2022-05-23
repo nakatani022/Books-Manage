@@ -34,10 +34,8 @@ const MyList: FC = memo(() => {
   
   const myListTest = posts.map((post: any, index: string) => (
     {authors: post.authors, image: post.image, title: post.title, memo: post.memo, description: post.description, readDate: post.readDate}
-    // [post.authors, post.image, post.title, post.memo]
     ));
     
-    // const [authors, imageLinks, title, memo] = myListTest;
 
     const onClickLink = (index: string)=> {
       navigate("/bookDetail", {
@@ -94,8 +92,6 @@ const MyList: FC = memo(() => {
       <Sbackground>
         <SbackMask>
           <Scontainer>
-            {/* <SearchBar onSubmit={onClickFetchData} />
-          <Link to="/app">アップリンク</Link> */}
             {myList}
           </Scontainer>
         </SbackMask>

@@ -1,6 +1,5 @@
 import { memo, ReactNode, FC } from "react";
 import styled from "styled-components";
-// import Sass from "../css/SassModules.modules.scss";
 
 type Props = {
   children: ReactNode;

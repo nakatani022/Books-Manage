@@ -8,7 +8,6 @@ type Props = {
   clickRemove: any;
 };
 
-// const db = firebase.firestore();
 
 export const ShioriList: FC<Props> = memo((props) => {
   const { shioriFilter, clickRemove } = props;
@@ -26,7 +25,6 @@ export const ShioriList: FC<Props> = memo((props) => {
           <SiconBox onClick={() => clickRemove(shiori.id)}>
             <SFontAwesomeIcon icon={faBook} />
           </SiconBox>
-          {/* <SremoveButton /> */}
         </Sdiv>
       </>
     );
@@ -35,11 +33,6 @@ export const ShioriList: FC<Props> = memo((props) => {
   return <>{shioriMap}</>;
 });
 
-// const Scontainer = styled.div`
-//   height: 600px;
-//   width: 600px;
-//   overflow: hidden;
-// `;
 
 const Sdiv = styled.div`
   margin: 0px auto;
@@ -118,21 +111,6 @@ const Sexplain = styled.p`
     width: auto;
   }
 `;
-
-// const SremoveButton = styled.a`
-//   border-top: 50px solid transparent;
-//   border-right: 60px solid #16B286;
-//   border-bottom: 60px solid transparent;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   height: 100%;
-//   background: transparent;
-//   height: -webkit-fill-available;
-//   &:hover{
-//     cursor: pointer;
-//   }
-// `;
 
 const SwrapperExplain = styled.div`
 `;

@@ -1,7 +1,5 @@
-// import { useLocation  } from "react-router-dom";
 import { memo, FC, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-// import { BooksList } from "./components/BooksList";
 import { db } from "./firebase";
 import {
   addDoc,
@@ -27,17 +25,9 @@ const BookDetail: FC = memo(() => {
     state as Array<authors>
   );
   const [memo, setMemo] = useState("");
-  // const [memo, setMemo] = useState(selectId[3].memo);
-  // const readDate = selectId[5].readDate ? selectId[5].readDate: null ;
-  // console.log(readDate);
   const [date, setDate] = useState();
   const [validate, setValidate] = useState<boolean>(false);
-  // const [shiori, setShiori] = useState();
-  // const [date, setDate] = useState(readDate);
-  // const [list, setList] = useState<Array<any>>([]);
   const onClickLink = () => navigate(-1);
-  // const onClickList = ()=> navigate('/mylist', { state: [{authors: `${selectId[0].authors}`},{imageLinks: `${selectId[1].imageLinks}`}]});
-  // const onClickList = ()=> navigate('/mylist');
 
   const image = selectId[1].imageLinks ? (
     <Simg
@@ -50,7 +40,6 @@ const BookDetail: FC = memo(() => {
 
   const authors = selectId[0].authors;
 
-  // console.log(selectId[5].readDate);
 
   const onClickList = (e: any) => {
     if(!date || !memo) {
@@ -74,29 +63,15 @@ const BookDetail: FC = memo(() => {
 
   const title = selectId[2].title;
   const description = selectId[3].description;
-  // const date1 = selectId[5].readDate;
-
-  // setMemo(selectId[3].memo);
 
   const onChange = (e: any) => setMemo(e.target.value);
 
   const onChangeDate = (e: any) => setDate(e.target.value);
 
-  // const Svalidate = (e: any)=> {
-  // return [validate && <p>※読了日と感想を記入してください</p>];
-  // }
-
-  // const Svalidate = (e: any)=> {
-  // if(validate){
-  //   <p>※読了日と感想を記入してください</p>
-  // }
-  // }
-
 
   return (
     <Scontainer>
       <SbackImage>
-        {/* {selectId[0].imageLinks} */}
         <Sdiv>
           {image}
           <SbookDetail>
@@ -107,7 +82,6 @@ const BookDetail: FC = memo(() => {
               <p>読了日:</p>
               <Sinput type="date" value={date} onChange={onChangeDate} />
             </Sbox>
-            {/* <button onClick={shioriClick}>シオリテスト</button> */}
             <Stextarea
               value={memo}
               onChange={onChange}
@@ -234,20 +208,6 @@ const Sbox = styled.div`
     width: auto;
   }
 `;
-
-// const Sbox2 = styled.div`
-//   display: flex;
-//   align-items: center;
-//   font-family: "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3",
-//     "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "MS P明朝",
-//     "MS PMincho", serif;
-// `;
-
-// const Srow = styled.div`
-//   display: flex;
-//   width: 418px;
-//   margin-bottom: 12px;
-// `;
 
 const Sinput = styled.input`
   width: 200px;

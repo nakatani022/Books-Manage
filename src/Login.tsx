@@ -10,7 +10,6 @@ import Bgbook from "./book4.jpg";
 const Login: FC = memo(() => {
   const [user] = useAuthState(auth);
 
-  // const totalItems1 = `該当: ${todos.totalItems}`;
 
   const SignInButton = () => {
     const signInWithGoogle = () => {
@@ -31,7 +30,6 @@ const Login: FC = memo(() => {
     return (
       <>
         <SimgIcon src={googleImage} alt="" />
-        {/* index.d.ts src anyカスタマイズ */}
         <SgoogleName>{auth.currentUser?.displayName}</SgoogleName>
       </>
     );
