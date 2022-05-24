@@ -13,7 +13,7 @@ type authors = {
 
 const MyList: FC = memo(() => {
   const [posts, setPosts] = useState<any>([]);
-  const [documentId, setDocumentId] = useState<any>([]);
+  // const [documentId, setDocumentId] = useState<any>([]);
 
   useEffect(() => {
     const postData = collection(db, "google-books");
@@ -23,12 +23,10 @@ const MyList: FC = memo(() => {
     // });
     /* リアルタイムでデータを取得 */
     onSnapshot(q, (querySnapshot) => {
-      setPosts(querySnapshot.docs.map((doc) => console.dir(({...doc.data(), id: doc.id }))));
       setPosts(querySnapshot.docs.map((doc) => ({...doc.data(), id: doc.id })));
     });
   }, []);
 
-  console.log(documentId);
 
   const navigate = useNavigate();
   
@@ -48,7 +46,6 @@ const MyList: FC = memo(() => {
           { readDate: myListTest[index].readDate}
         ],
     })
-    console.log(myListTest[index].image);
   };
 
   const removeDate = (id: any) => {

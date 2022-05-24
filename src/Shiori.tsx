@@ -91,13 +91,7 @@ export const Shiori: FC = memo(() => {
   const clickRemove = (id: any) => {
     deleteDoc(doc(db, "shiori-list", id))
   }
-  // const clickRemove = (index: string) => {
-  //   // shioriFilter[index];
-  // }
   
-
-
-
   useEffect(() => {
     outputData();
   }, [db]);
