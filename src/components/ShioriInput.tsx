@@ -3,14 +3,13 @@ import styled from "styled-components";
 
 
 type Props = {
-  // title: string;
   changePage: any;
   changeTerm: any;
   changeText: any;
   clickShiori: any;
-  page: any;
-  term: any;
-  text: any;
+  page: number;
+  term: string;
+  text: string;
   validate: boolean;
 };
 

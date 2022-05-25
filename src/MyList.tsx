@@ -1,19 +1,14 @@
 import { useState, FC, memo, useEffect } from "react";
 import "./App.css";
-import { collection, onSnapshot, orderBy, query, deleteDoc, doc, documentId, QuerySnapshot } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query, deleteDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { db } from "./firebase";
 import styled from "styled-components";
 import book4 from "./book4.jpg";
 
-type authors = {
-  authors: string;
-  imageLinks: string;
-};
 
 const MyList: FC = memo(() => {
   const [posts, setPosts] = useState<any>([]);
-  // const [documentId, setDocumentId] = useState<any>([]);
 
   useEffect(() => {
     const postData = collection(db, "google-books");

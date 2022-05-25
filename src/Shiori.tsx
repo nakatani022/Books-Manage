@@ -8,17 +8,12 @@ import styled from "styled-components";
 import {
   addDoc,
   collection,
-  // doc,
   onSnapshot,
-  // QuerySnapshot,
   serverTimestamp,
   orderBy,
   query,
   deleteDoc,
   doc,
-  documentId,
-  getDocs,
-  // getDocs,
 } from "firebase/firestore";
 
 type shioriType = {
@@ -30,7 +25,6 @@ type shioriType = {
 
 export const Shiori: FC = memo(() => {
   const { state } = useLocation();
-  const [documentId, setDocumentId] = useState<any>([]);
 
   // タイトル著者メモ取得、出力
   const [shiori, setShiori] = useState<Array<shioriType>>(
@@ -45,7 +39,7 @@ export const Shiori: FC = memo(() => {
   const [page, setPage] = useState<number>(0);
   const [term, setTerm] = useState<string>("");
   const [text, setText] = useState<string>("");
-  const [id, setId] = useState<any>(0);
+  // const [id, setId] = useState<any>(0);
   const [shioriArray, setShioriArray] = useState<any>([]);
   const [validate, setValidate] = useState<boolean>(false);
   // const [datas, setDatas] = useState<any>([]);

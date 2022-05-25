@@ -1,11 +1,10 @@
 import { memo, FC } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Router } from "../router/Router"
 import styled from "styled-components";
 
 type Props = {
-  title: any;
-  authors: any;
+  title: string;
+  authors: string;
   description: string;
   imageLinks: string;
 };

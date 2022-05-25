@@ -40,4 +40,3 @@ const Slogo = styled.div`
   padding-top: 20px;
 `;
 
-const SLink = styled.div``;

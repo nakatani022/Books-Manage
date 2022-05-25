@@ -10,7 +10,7 @@ const App: FC = () => {
   const [todos, setTodos] = useState<any>([]);
   const [active, setActive] = useState<boolean>(false);
 
-  const onClickFetchData = async (word: any) => {
+  const onClickFetchData = async (word: string) => {
     setTodos("");
     const params = {
       q: `intitle:${word}`,
