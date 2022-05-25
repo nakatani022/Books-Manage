@@ -13,7 +13,6 @@ export const ShioriList: FC<Props> = memo((props) => {
   const { shioriFilter, clickRemove } = props;
 
   const shioriMap = shioriFilter.map((shiori: any) => {
-    console.log(`id:${shiori.id2}`);
     return (
       <>
         <Sdiv key={shiori.id}>
